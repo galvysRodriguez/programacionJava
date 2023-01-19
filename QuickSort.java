@@ -10,10 +10,6 @@
  */
 package quicksort;
 
-/**
- *
- * @author Victor Olave
- */
 public class QuickSort {
 
     /**
@@ -31,6 +27,12 @@ public class QuickSort {
          ImprimirVector(numeros);
     }
     
+    public static void swap(int numeros[],int i, int j){
+        int aux;
+        aux = numeros[i];                  
+        numeros[i]= numeros[j];
+        numeros[j]= aux;
+    }
     //Metodo de Ordenamiento QuickSort
     public static void Quicksort(int numeros[], int izq, int der)
     {
@@ -43,7 +45,6 @@ public class QuickSort {
             //Se definen los dos lados y un auxiliar
             int i = izq; 
             int j = der; 
-            int aux;
            
             while(i<j)
             {
@@ -55,9 +56,7 @@ public class QuickSort {
 
                if (i<j) 
                {                                     
-                   aux = numeros[i];                  
-                   numeros[i]= numeros[j];
-                   numeros[j]=aux;
+                   swap(numeros, i, j);
                }
             }
 
@@ -73,9 +72,11 @@ public class QuickSort {
     
     public static void ImprimirVector(int arreglo[])
     {
-        for(int i = 0; i < arreglo.length; i++)
+        int i = 0;
+        while (i < arreglo.length)
         {
-            System.out.println(arreglo[i]);
+            System.out.print(arreglo[i]+" ");
+            i++;
         }
     }
             
